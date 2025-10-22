@@ -1,0 +1,561 @@
+/* =======================================
+   1. REGRAS GLOBAIS / RESET
+   ======================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff; /* Padrão para a Landing Page */
+    overflow-x: hidden; /* Garante que nada vaze horizontalmente */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+/* =======================================
+   2. ESTILOS DE PÁGINA: LOGIN/CADASTRO
+   (Para usar, a tag body precisa da classe .body-form)
+   ======================================= */
+.body-form {
+    background-color: #22742a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white;
+    /* AJUSTE FINAL PARA COMPACTAÇÃO */
+    padding: 20px 35px; 
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px; /* Largura estreita e compacta */
+    text-align: center;
+}
+
+.logo-area {
+    margin-bottom: 15px; /* Redução */
+}
+
+.logo-area img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 3px; /* Redução */
+}
+
+.subtitulo {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px; /* Redução */
+    display: block;
+}
+
+/* Formulário e Campos */
+.form-group {
+    margin-bottom: 8px; /* Redução para campos mais próximos */
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 3px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 6px 10px; /* Redução de altura */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #55C22B;
+    outline: none;
+}
+
+.link-esqueci-senha {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #55C22B;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+.link-esqueci-senha:hover,
+.link-cadastro-login a:hover {
+    text-decoration: underline;
+}
+
+.link-cadastro-login {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.link-cadastro-login a {
+    color: #55C22B;
+    font-weight: bold;
+}
+
+/* Botões do Formulário */
+.btn-primary {
+    background-color: #55C22B;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #22742a;
+    background-color: #22742a;
+}
+
+
+/* =======================================
+   3. ESTILOS DE LAYOUT DA PÁGINA INICIAL
+   ======================================= */
+
+/* --- Cabeçalho e Navegação --- */
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo-header img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-right: 50px;
+}
+
+.nav-principal a {
+    color: #555;
+    font-size: 15px;
+}
+
+.nav-principal a:hover {
+    color: #22742a;
+}
+
+/* Botões de Ação do Header */
+.botoes-acao {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: #22742a;
+    border: 1px solid #22742a;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    background-color: #f0f8ff;
+}
+
+.btn-cta-principal {
+    background-color: #26b144;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-cta-principal:hover {
+    background-color: #1f9438;
+}
+
+/* --- Seção HERO (Destaque Principal) --- */
+.hero-section {
+    background-color: #4CAF50;
+    background-image: linear-gradient(to right, rgba(46, 139, 87, 0.8), rgba(46, 139, 87, 0.8));
+    background-size: cover;
+    background-position: right center;
+    padding: 80px 50px;
+    height: 450px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+/* --- Seção de Funcionalidades --- */
+.funcionalidades-section {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.funcionalidades-section h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.funcionalidades-section h2 span {
+    color: #4CAF50;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card-funcionalidade {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    height: 180px;
+    text-align: left;
+    transition: box-shadow 0.3s;
+}
+
+.card-funcionalidade:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-funcionalidade img, .card-funcionalidade i {
+    width: 25px;
+    margin-bottom: 10px;
+    height: 25px;
+    color: #0f4915;
+}
+
+.card-funcionalidade h3 {
+    font-size: 18px;
+    color: #0f4915;
+    margin-bottom: 5px;
+}
+
+.card-funcionalidade p {
+    font-size: 13px;
+    color: #666;
+}
+
+/* --- Seção Benefícios e Preços --- */
+.beneficios-precos-section {
+    padding: 60px 50px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beneficios, .gratis-comecar {
+    width: 45%;
+    text-align: left;
+}
+
+.beneficios h2, .gratis-comecar h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.beneficios h2 span {
+    color: #0f4915;
+}
+
+.lista-beneficios .item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.lista-beneficios .item img, .lista-beneficios .item i {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    margin-top: 5px;
+    color: #0f4915;
+}
+
+.item h4 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.lista-precos .item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.lista-precos .item img, .lista-precos .item i {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    color: #0f4915;
+}
+
+/* Botão CTA Secundário (Grátis) */
+.btn-cta-secundario {
+    background-color: #0f4915;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 250px;
+    transition: background-color 0.3s;
+}
+
+.btn-cta-secundario:hover {
+    background-color: #0f4915;
+}
+
+/* --- Seção de CTA Final --- */
+.cta-final-section {
+    background-color: #c9e6b4;
+    padding: 50px 50px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-final-section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.cta-final-section p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.botoes-cta-final {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-demo, .btn-marketplace {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-demo {
+    background-color: #0f4915;
+    color: white;
+}
+
+.btn-marketplace {
+    background-color: #0f4915;
+    color: white
+   
+}
+
+.btn-demo:hover, .btn-marketplace:hover {
+    opacity: 0.9;
+}
+
+/* --- Rodapé --- */
+.rodape-principal {
+    background-color: #a2c7d4;
+    color: #333;
+    padding: 30px 50px 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.links-rodape {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.links-rodape a {
+    color: #333;
+}
+
+.links-rodape a:hover {
+    color: #0f4915;
+}
+
+.info-rodape {
+    font-size: 12px;
+    color: #555;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* =======================================
+   4. ESTILOS DA PÁGINA MARKETPLACE
+   ======================================= */
+
+/* --- Banner Principal do Marketplace --- */
+.marketplace-banner {
+    background-color: #4CAF50; /* O mesmo verde do Hero Section da Home */
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.marketplace-banner h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* --- Grade de Cards de Conteúdo --- */
+.marketplace-conteudo {
+    padding: 20px 50px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px; /* Largura base para cada card */
+    overflow: hidden; /* Garante que a imagem se ajuste ao border-radius */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-imagem {
+    width: 100%;
+    height: 180px; /* Altura da área da imagem */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #eee;
+}
+
+.card-corpo {
+    padding: 15px;
+    text-align: left;
+}
+
+.card-corpo h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+    min-height: 44px; /* Garante que títulos longos não desalinhem o botão */
+}
+
+.card-corpo p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Estilo do Botão Ver Detalhes */
+.btn-detalhes {
+    background-color: #1d7b83; /* Azul escuro do CTA */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-detalhes:hover {
+    background-color: #1a6060;
+}
+
+/* Estilo da Navegação Ativa (para destacar "Marketplace") */
+.nav-principal ul li.active a {
+    color: #1d7b83; 
+    font-weight: bold;
+    border-bottom: 2px solid #1d7b83;
+}
