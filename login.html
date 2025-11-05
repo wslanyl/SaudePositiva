@@ -4,34 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saúde Positiva - Login</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="icon" href="saudepositivalogo.png" type="image/png"> 
 </head>
-<body class="body-form">  <div class="container">
-        <div class="logo-area">
-            <img src="logo_saude_positiva.png" alt="Logo Saúde Positiva" style="width: 100px;">
-            <h2>Login</h2>
-            <span class="subtitulo">Digite suas informações para continuar</span>
-        </div>
+<body>
 
-        <form>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
-            </div>
-
-            <div class="form-group">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" placeholder="********" required>
-            </div>
-
-            <a href="#" class="link-esqueci-senha">Esqueci minha senha</a>
-
-            <button type="submit" class="btn-primary">Entrar</button>
-        </form>
+    <div class="container-pagina">
         
-        <p class="link-cadastro-login">
-            Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a>
-        </p>
+        <div class="card card-login">
+            <div class="logo-area">
+                <img src="saudepositivalogo.png" alt="Logo Saúde Positiva" class="logo">
+                <h1>Login</h1>
+                <p>Digite suas informações para continuar</p>
+            </div>
+            
+<form class="form-content" action="agendamento.html" method="GET">
+    <input type="email" placeholder="Email" required>
+    <div class="input-com-icone">
+        <input type="password" placeholder="Senha" required>
+        <span class="icone-senha"></span>
     </div>
 
-</body> </html>
+    <a href="#" class="link-recuperar-senha">Esqueci minha senha</a>
+
+    <button type="submit" class="btn btn-entrar">Entrar</button>
+</form>                
+                <p class="link-troca">
+                    Ainda não tem conta? 
+                    <a href="index.html">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
+        
+    </div>
+    
+    <img src="fotomedico.jpg" alt="Fundo com doutor sorrindo em um laptop" class="background-image"> 
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Confirmado - Saúde Positiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="logo_saude_positiva.png" alt="Saúde Positiva">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="agendamento.html">Agendar</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="meu_progresso.html">Meu Progresso</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <button class="btn-green">SAIR</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card agendamento-card confirmation-page">
+            <a href="#" class="back-link">&lt; Voltar</a>
+            <div class="confirmation-content">
+                <div class="confirmation-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 class="confirmation-message">AGENDAMENTO CONFIRMADO</h1>
+
+                <div class="section-column details-column confirmation-details">
+                    <h2>Informações do agendamento</h2>
+                    <div class="doctor-info-box">
+                        <img src="dr_helena.png" alt="Dra. Helena Vasconcelos Duarte" class="doctor-avatar">
+                        <div>
+                            <p class="doctor-name">Dra. Helena Vasconcelos Duarte</p>
+                            <p class="doctor-specialty">Cardiologista</p>
+                            <p class="doctor-price">R$100,00</p>
+                        </div>
+                    </div>
+                    <p>07 de Outubro de 2023, 15:00</p>
+                    <p>Fuso horário Brasília</p>
+                    <div class="consult-type">
+                        <input type="checkbox" id="consulta-online-readonly-conf" checked disabled>
+                        <label for="consulta-online-readonly-conf">Consulta Online</label>
+                    </div>
+
+                    <h2>Informações de pagamento</h2>
+                    <p class="payment-details-text">PAGAR PESSOALMENTE. DÉBITO</p>
+                    <p class="small-text">Ao concluir seu agendamento, você receberá um email de notificação com todos os detalhes da consulta.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>© 2024 por Criado pela Saúde Positiva e demais membros ativos. - Cnpj: 31.145.189/0001-09</p>
+        <p>Email: saudeonline@email.com - Telefone: (xx) xxxxx-xxxx</p>
+    </footer>
+</body>
+</html>

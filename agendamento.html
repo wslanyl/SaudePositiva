@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento de Consultas</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/agendamento.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo-area-header">
+      <img src="imagens/logo.png" alt="Logo da clínica">
+      <div>
+        <h1>HealthConnect</h1>
+        <p>Agende sua consulta com facilidade</p>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar médico ou especialidade">
+      <button class="btn">🔍</button>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Consultas</a></li>
+        <li><a href="#">Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+  <section class="hero-banner">
+    <h2>Encontre o médico ideal para você</h2>
+    <p>Agende sua consulta em poucos cliques.</p>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filter-section">
+    <form class="filter-form">
+      <select>
+        <option selected disabled>Especialidade</option>
+        <option>Clínico Geral</option>
+        <option>Dermatologista</option>
+        <option>Pediatra</option>
+      </select>
+
+      <select>
+        <option selected disabled>Cidade</option>
+        <option>Recife</option>
+        <option>Olinda</option>
+        <option>Jaboatão</option>
+      </select>
+
+      <button type="submit" class="btn-green">Buscar</button>
+    </form>
+  </section>
+
+  <!-- LISTA DE MÉDICOS -->
+  <main class="doctor-container">
+    <article class="doctor-card-simple">
+      <div class="doctor-info">
+        <img src="imagens/medico1.jpg" alt="Foto do Dr. João">
+        <div class="doctor-details">
+          <h2>Dr. João Silva</h2>
+          <p>Cardiologista | CRM 12345</p>
+          <p class="price">Consulta: R$ 200</p>
+        </div>
+      </div>
+      <button class="btn-agendar">Agendar</button>
+    </article>
+
+    <article class="doctor-card-simple">
+      <div class="doctor-info">
+        <img src="imagens/medico2.jpg" alt="Foto da Dra. Maria">
+        <div class="doctor-details">
+          <h2>Dra. Maria Souza</h2>
+          <p>Dermatologista | CRM 67890</p>
+          <p class="price">Consulta: R$ 250</p>
+        </div>
+      </div>
+      <button class="btn-agendar">Agendar</button>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <p>© 2025 HealthConnect | Desenvolvido com 💚 por Wslany</p>
+  </footer>
+</body>
+</html>

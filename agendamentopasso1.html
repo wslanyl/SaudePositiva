@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agende sua Consulta - Saúde Positiva</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="logo_saude_positiva.png" alt="Saúde Positiva">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="agendamento.html">Agendar</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="meu_progresso.html">Meu Progresso</a></li>
+            </ul>
+        </nav>
+        <div class="user-menu">
+            <button class="btn-green">SAIR</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card agendamento-card">
+            <a href="#" class="back-link">&lt; Voltar</a>
+            <h1>Agende sua consulta</h1>
+            <p class="subtitle">Helena Vasconcelos Duarte</p>
+
+            <div class="agendamento-content">
+                <div class="section-column">
+                    <h2>Selecione uma data</h2>
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <span class="nav-arrow">&lt;</span>
+                            <span>Outubro 2023</span>
+                            <span class="nav-arrow">&gt;</span>
+                        </div>
+                        <table class="calendar-grid">
+                            <thead>
+                                <tr>
+                                    <th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td><span class="day past">30</span></td></tr>
+                                <tr><td class="day past">1</td><td class="day">2</td><td class="day">3</td><td class="day">4</td><td class="day">5</td><td class="day">6</td><td class="day selected">7</td></tr>
+                                <tr><td class="day">8</td><td class="day">9</td><td class="day">10</td><td class="day">11</td><td class="day">12</td><td class="day">13</td><td class="day">14</td></tr>
+                                <tr><td class="day">15</td><td class="day">16</td><td class="day">17</td><td class="day">18</td><td class="day">19</td><td class="day">20</td><td class="day">21</td></tr>
+                                <tr><td class="day">22</td><td class="day">23</td><td class="day">24</td><td class="day">25</td><td class="day">26</td><td class="day">27</td><td class="day">28</td></tr>
+                                <tr><td class="day">29</td><td class="day">30</td><td class="day">31</td><td></td><td></td><td></td><td></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="section-column">
+                    <h2>Horário disponível</h2>
+                    <p class="subtitle">Helena Vasconcelos Duarte (GMT)</p>
+                    <div class="time-slots">
+                        <button class="time-slot selected">15:00</button>
+                        <button class="time-slot">15:30</button>
+                        <button class="time-slot">16:00</button>
+                        <button class="time-slot">16:30</button>
+                        <button class="time-slot">17:00</button>
+                        <button class="time-slot">17:30</button>
+                    </div>
+                </div>
+
+                <div class="section-column details-column">
+                    <h2>Detalhes da consulta</h2>
+                    <div class="doctor-info-box">
+                        <img src="dr_helena.png" alt="Dra. Helena Vasconcelos Duarte" class="doctor-avatar">
+                        <div>
+                            <p class="doctor-name">Dra. Helena Vasconcelos Duarte</p>
+                            <p class="doctor-specialty">Cardiologista</p>
+                            <p class="doctor-price">R$100,00</p>
+                        </div>
+                    </div>
+                    <p>07 de Outubro de 2023, 15:00</p>
+                    <p>Fuso horário Brasília</p>
+                    <div class="consult-type">
+                        <input type="checkbox" id="consulta-online" checked disabled>
+                        <label for="consulta-online">Consulta Online</label>
+                    </div>
+                    <button class="btn btn-primary">Próximo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>© 2024 por Criado pela Saúde Positiva e demais membros ativos. - Cnpj: 31.145.189/0001-09</p>
+        <p>Email: saudeonline@email.com - Telefone: (55) 981456932</p>
+    </footer>
+
+    </body>
+</html>
