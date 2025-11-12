@@ -7,10 +7,10 @@ import {
   Typography,
   Link,
 } from '@mui/material';
-import CustomInput from '../components/Input'; // Seu componente customizado
-import CustomButton from '../components/Button'; // Seu componente customizado
-// Importe o logo que está na raiz
-import logoImage from '../../saudepositivalogo.png'; 
+import CustomInput from '../components/Input';
+import CustomButton from '../components/Button';
+
+const logoImage = '/saudepositivalogo.png';
 
 const RegisterPage = () => {
 

@@ -1,5 +1,5 @@
 // src/pages/LoginPage.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Box,
@@ -11,31 +11,31 @@ import {
 } from '@mui/material';
 import CustomInput from '../components/Input'; 
 import CustomButton from '../components/Button'; 
-// Importe o logo que está na raiz
-import logoImage from '../../saudepositivalogo.png'; 
+
+const logoImage = '/saudepositivalogo.png';
 
 const LoginPage = () => {
   const theme = useTheme();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
     // Lógica de autenticação e navegação virá aqui
-    console.log('Tentativa de Login');
+    console.log('Tentativa de Login', { email, password });
   };
 
   return (
-    // Box para simular o fundo azul escuro
     <Box
       sx={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        bgcolor: '#204E64', // Cor de fundo do protótipo
+        bgcolor: '#204E64',
         p: 2,
       }}
     >
-      {/* O Card representa a caixa branca do formulário */}
       <Card
         component="form"
         onSubmit={handleLogin}
@@ -48,7 +48,6 @@ const LoginPage = () => {
         }}
       >
         <Box sx={{ mb: 3 }}>
-          {/* Logo do Saúde Positiva */}
           <img 
             src={logoImage} 
             alt="Saúde Positiva Logo" 
@@ -62,25 +61,25 @@ const LoginPage = () => {
           </Typography>
         </Box>
 
-        {/* --- CAMPOS DE FORMULÁRIO --- */}
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <CustomInput 
             label="Email" 
             type="email" 
             fullWidth 
             required 
-            // Adicionar aqui o state value e onChange
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <CustomInput 
             label="Senha" 
             type="password" 
             fullWidth 
             required 
-            // Adicionar aqui o state value e onChange
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Box>
 
-        {/* Link Esqueceu a senha */}
         <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1, mb: 3 }}>
           <Link 
             component={RouterLink} 
@@ -92,7 +91,6 @@ const LoginPage = () => {
           </Link>
         </Box>
 
-        {/* Botão de Login (usando Button.js) */}
         <CustomButton 
           type="submit" 
           fullWidth 
@@ -102,7 +100,6 @@ const LoginPage = () => {
           Entrar
         </CustomButton>
         
-        {/* Link para o Cadastro */}
         <Typography variant="body2" sx={{ mt: 2 }}>
           Ainda não tem conta?{' '}
           <Link 

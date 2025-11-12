@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { 
+  Link, // Componente Link do MUI para o rodapé
   Box, 
   Container, 
   Grid, 
@@ -19,8 +20,9 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
+import LogoutIcon from '@mui/icons-material/Logout'; // Ícone de Sair do MUI
 
-// Ícones para as funcionalidades (ex: Agendamento, Prontuário, etc.)
+// Ícones para as funcionalidades
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import DescriptionIcon from '@mui/icons-material/Description';
 import MilitaryTechIcon from '@mui/icons-material/MilitaryTech';
@@ -28,31 +30,40 @@ import SmartToyIcon from '@mui/icons-material/SmartToy';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import MessageIcon from '@mui/icons-material/Message';
 
-// Assumindo que você tem uma imagem de banner na pasta 'public' ou 'src'
-import heroImage from '../../fotomedico.jpg'; 
-import logoImage from '../../saudepositivalogo.png'; 
-
-// Componente para o layout do Header/Footer (que será reutilizado)
+// Componente para o layout do Header (Corrigido e Centralizado)
 const Header = () => (
   <Box sx={{ 
     display: 'flex', 
     justifyContent: 'space-between', 
     alignItems: 'center', 
     py: 2, 
-    px: { xs: 2, md: 5 } 
+    px: { xs: 2, md: 5 },
+    boxShadow: 1, 
+    bgcolor: 'white'
   }}>
+    {/* LOGO: Permanece à esquerda (Aumentado para 90px de altura) */}
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <img src={logoImage} alt="Logo" style={{ height: 32, marginRight: 2 }} />
-        <Typography variant="h6" color="primary" fontWeight="bold" sx={{ display: { xs: 'none', sm: 'block' } }}>
-            SAÚDE POSITIVA
-        </Typography>
+      <img src="/saudepositivalogo.png" alt="Saúde Positiva Logo" style={{ height: 90, marginRight: 8 }} />
     </Box>
+
+    {/* ITENS DE NAVEGAÇÃO: Centralizado entre o logo e o botão Sair */}
+    <Box sx={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        flexGrow: 1, 
+        justifyContent: 'center'
+    }}>
+        {/* Links de navegação sem fundo */}
+        <Button component={RouterLink} to="/especialistas" variant="text" sx={{ mx: 2.5, color: 'text.primary' }}>Especialistas</Button>
+        <Button component={RouterLink} to="/dashboard" variant="text" sx={{ mx: 2.5, color: 'text.primary' }}>Dashboard</Button>
+        <Button component={RouterLink} to="/meu-progresso" variant="text" sx={{ mx: 2.5, color: 'text.primary' }}>Meu Progresso</Button>
+    </Box>
+
+    {/* BOTÃO SAIR: Alinhado à direita */}
     <Box>
-        {/* Você pode substituir estes por um componente de navegação se quiser */}
-        <Button component={RouterLink} to="/marketplace" sx={{ mr: 1, color: 'text.primary' }}>Marketplace</Button>
-        <Button component={RouterLink} to="/agendamento" sx={{ mr: 1, color: 'text.primary' }}>Agendar</Button>
-        <Button component={RouterLink} to="/login" variant="outlined" sx={{ mr: 1 }}>Login</Button>
-        <Button component={RouterLink} to="/cadastro" variant="contained" color="secondary">Começar Grátis</Button>
+      <Button component={RouterLink} to="/logout" variant="contained" color="secondary" startIcon={<LogoutIcon />}>
+        Sair
+      </Button>
     </Box>
   </Box>
 );
@@ -99,38 +110,44 @@ const HomePage = () => {
     <Box>
       <Header />
 
-      {/* ------------------- 1. HERO/BANNER PRINCIPAL ------------------- */}
+      {/* ------------------- 1. HERO/BANNER PRINCIPAL (FUNDO COM IMAGEM) ------------------- */}
       <Box 
         sx={{ 
-          bgcolor: theme.palette.secondary.main, // Verde brilhante
+          // CORREÇÃO: Usa a imagem do médico como fundo de toda a seção
+          backgroundImage: `url(/fotomedico.jpg)`, 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'right center', // Alinha à direita e centraliza verticalmente
+          backgroundRepeat: 'no-repeat',
+          
+          backgroundColor: theme.palette.secondary.main, 
+          backgroundBlendMode: 'multiply', 
+          
           color: 'white', 
           py: 8, 
           position: 'relative',
           overflow: 'hidden',
+          minHeight: '400px', 
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         <Container maxWidth="lg">
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
-              <Typography variant="h4" component="h2" fontWeight="bold" sx={{ mb: 3 }}>
+            {/* TEXTO PRINCIPAL: Ocupa a coluna MD=7 para dar espaço visual ao fundo */}
+            <Grid item xs={12} md={7}> 
+              <Typography 
+                variant="h4" 
+                component="h2" 
+                fontWeight="bold" 
+                sx={{ 
+                  mb: 3, 
+                  textAlign: { xs: 'center', md: 'left' }
+                }}
+              >
                 CONECTAMOS VOCÊ AO CUIDADO QUE MERECE, COM CONFORTO E CONFIANÇA.
               </Typography>
-              {/* Box abaixo para a imagem do médico (no lado direito no layout desktop) */}
             </Grid>
-            <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Box 
-                    component="img"
-                    src={heroImage}
-                    alt="Médico sorrindo em um laptop"
-                    sx={{
-                        maxWidth: '100%',
-                        height: 'auto',
-                        borderRadius: 2,
-                        boxShadow: 8,
-                        display: { xs: 'none', md: 'block' } // Esconder no mobile
-                    }}
-                />
-            </Grid>
+            {/* A coluna MD=5 da imagem é removida */}
           </Grid>
         </Container>
       </Box>
@@ -225,9 +242,9 @@ const HomePage = () => {
             © 2025 Saúde Positiva | CNPJ - 21.341.389/0001-09
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <Link href="#" color="inherit" sx={{ mx: 1 }}>Política de Privacidade</Link> | 
-            <Link href="#" color="inherit" sx={{ mx: 1 }}>Termos e Condições</Link> |
-            <Link href="#" color="inherit" sx={{ mx: 1 }}>Política de Cookies</Link>
+            <Link component={RouterLink} to="#" color="inherit" sx={{ mx: 1 }}>Política de Privacidade</Link> | 
+            <Link component={RouterLink} to="#" color="inherit" sx={{ mx: 1 }}>Termos e Condições</Link> |
+            <Link component={RouterLink} to="#" color="inherit" sx={{ mx: 1 }}>Política de Cookies</Link>
           </Typography>
         </Container>
       </Box>
