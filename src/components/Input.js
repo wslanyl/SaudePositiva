@@ -1,28 +1,16 @@
+// src/components/Input.js
 import React from 'react';
-import { TextInput, StyleSheet } from 'react-native';
-import colors from '../theme/colors';
+import { TextField } from '@mui/material';
 
-export default function Input({ placeholder, value, onChangeText, secureTextEntry }) {
+// O componente CustomInput deve apenas envolver o TextField do MUI
+const CustomInput = (props) => {
   return (
-    <TextInput
-      placeholder={placeholder}
-      placeholderTextColor={colors.textLight}
-      value={value}
-      onChangeText={onChangeText}
-      secureTextEntry={secureTextEntry}
-      style={styles.input}
+    <TextField 
+      {...props} 
+      variant="outlined" // Padrão do MUI para input box
+      size="medium"      // Altura padrão
     />
   );
-}
+};
 
-const styles = StyleSheet.create({
-  input: {
-    borderWidth: 1,
-    borderColor: '#DADADA',
-    borderRadius: 8,
-    padding: 12,
-    marginVertical: 6,
-    fontSize: 15,
-    color: colors.textDark,
-  },
-});
+export default CustomInput;

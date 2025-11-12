@@ -1,40 +1,53 @@
+// src/components/DoctorCard.js
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import colors from '../theme/colors';
+import { Card, Box, Typography, Avatar } from '@mui/material';
+import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 
-export default function DoctorCard({ name, specialty, price, onPress }) {
+const DoctorCard = ({ name, specialty, price, avatarSrc }) => {
   return (
-    <View style={styles.card}>
-      <View style={{ flex: 1 }}>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.specialty}>{specialty}</Text>
-        <Text style={styles.price}>{price}</Text>
-      </View>
-      <TouchableOpacity style={styles.button} onPress={onPress}>
-        <Text style={styles.buttonText}>Agendar</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
+    <Card sx={{ p: 2, display: 'flex', alignItems: 'center', boxShadow: 3 }}>
+      
+      {/* 1. Imagem/Avatar do Médico */}
+      <Avatar 
+        alt={name} 
+        src={avatarSrc}
+        sx={{ width: 60, height: 60, mr: 2 }}
+      >
+        {/* Fallback se a imagem não carregar */}
+        <MedicalInformationIcon />
+      </Avatar>
 
-const styles = StyleSheet.create({
-  card: {
-    flexDirection: 'row',
-    backgroundColor: '#FFF',
-    borderRadius: 10,
-    padding: 15,
-    marginVertical: 8,
-    elevation: 3,
-  },
-  name: { fontWeight: 'bold', fontSize: 16, color: colors.textDark },
-  specialty: { color: colors.textLight, marginBottom: 6 },
-  price: { color: colors.primary, fontWeight: '600' },
-  button: {
-    backgroundColor: colors.primary,
-    borderRadius: 6,
-    paddingVertical: 8,
-    paddingHorizontal: 15,
-    justifyContent: 'center',
-  },
-  buttonText: { color: '#FFF', fontWeight: 'bold' },
-});
+      {/* 2. Detalhes do Médico */}
+      <Box sx={{ flexGrow: 1 }}>
+        <Typography variant="subtitle1" component="div" fontWeight="bold">
+          {name}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {specialty}
+        </Typography>
+      </Box>
+
+      {/* 3. Preço da Consulta */}
+      <Box sx={{ textAlign: 'right' }}>
+        <Typography 
+          variant="h6" 
+          color="primary" 
+          fontWeight="bold"
+        >
+          {/* Formatação simples do preço */}
+          {price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+        </Typography>
+      </Box>
+    </Card>
+  );
+};
+
+// Definir valores padrão para as props
+DoctorCard.defaultProps = {
+  name: "Dr(a). Nome do Médico",
+  specialty: "Especialidade",
+  price: 0,
+  avatarSrc: ""
+};
+
+export default DoctorCard;

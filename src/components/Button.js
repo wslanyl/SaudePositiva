@@ -1,26 +1,15 @@
+// src/components/Button.js
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import colors from '../theme/colors';
+import { Button } from '@mui/material';
 
-export default function Button({ title, onPress, style }) {
+// O componente CustomButton deve apenas envolver o Button do MUI
+const CustomButton = (props) => {
   return (
-    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
-      <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
+    <Button 
+      {...props} 
+      // Por padrão, use as configurações do tema (cor primary, variant contained)
+    />
   );
-}
+};
 
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: colors.primary,
-    borderRadius: 8,
-    paddingVertical: 14,
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  text: {
-    color: colors.white,
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-});
+export default CustomButton;
