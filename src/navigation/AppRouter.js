@@ -2,26 +2,31 @@
 
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-
-// Importe suas páginas
 import Home from '../pages/HomePage';
 import Login from '../pages/LoginPage';
 import Register from '../pages/RegisterPage';
-// ... adicionar as outras páginas conforme elas forem criadas ...
+import Agendar from '../pages/AgendarPage';
+import Confirmacao from '../pages/ConfirmacaoPage';
+import Especialistas from '../pages/EspecialistasPage';
+import FormularioAgendamento from '../pages/FormularioAgendamentoPage';
+import SelecionarData from '../pages/SelecionarDataPage';
 
-const AppRoutes = () => {
+const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/cadastro" element={<Register />} />
       {/* Rotas futuras: */}
       {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-      {/* <Route path="/agendamento" element={<Agendamento />} /> */}
-
+      <Route path="/agendar" element={<Agendar />} />
+      <Route path="/confirmacao" element={<Confirmacao />} />
+      <Route path="/especialistas" element={<Especialistas />} />
+      <Route path="/formulario-agendamento" element={<FormularioAgendamento />} />
+      <Route path="/selecionar-data" element={<SelecionarData />} />
       <Route path="*" element={<h1>Página não encontrada</h1>} /> 
     </Routes>
   );
 };
 
-export default AppRoutes;
+export default AppRouter;

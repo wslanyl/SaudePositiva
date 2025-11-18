@@ -1,16 +1,9 @@
 // src/pages/LoginPage.js
 import React, { useState } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import {
-  Box,
-  Card,
-  Container,
-  Typography,
-  Link,
-  useTheme 
-} from '@mui/material';
-import CustomInput from '../components/Input'; 
-import CustomButton from '../components/Button'; 
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { Box, Card, Typography, Link, useTheme } from '@mui/material';
+import CustomInput from '../components/Input';
+import CustomButton from '../components/Button';
 
 const logoImage = '/saudepositivalogo.png';
 
@@ -18,11 +11,14 @@ const LoginPage = () => {
   const theme = useTheme();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     // Lógica de autenticação e navegação virá aqui
     console.log('Tentativa de Login', { email, password });
+    // Se o login for bem-sucedido, redirecione:
+    navigate('/agendar');
   };
 
   return (
@@ -48,10 +44,10 @@ const LoginPage = () => {
         }}
       >
         <Box sx={{ mb: 3 }}>
-          <img 
-            src={logoImage} 
-            alt="Saúde Positiva Logo" 
-            style={{ width: 'auto', height: 40 }} 
+          <img
+            src={logoImage}
+            alt="Saúde Positiva Logo"
+            style={{ width: 'auto', height: 40 }}
           />
           <Typography variant="h5" component="h1" sx={{ mt: 1, mb: 0 }}>
             Login
@@ -60,53 +56,49 @@ const LoginPage = () => {
             Digite suas informações para continuar
           </Typography>
         </Box>
-
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <CustomInput 
-            label="Email" 
-            type="email" 
-            fullWidth 
-            required 
+          <CustomInput
+            label="Email"
+            type="email"
+            fullWidth
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <CustomInput 
-            label="Senha" 
-            type="password" 
-            fullWidth 
-            required 
+          <CustomInput
+            label="Senha"
+            type="password"
+            fullWidth
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </Box>
-
         <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 1, mb: 3 }}>
-          <Link 
-            component={RouterLink} 
-            to="/recuperar-senha" 
-            variant="body2" 
-            color="primary" 
+          <Link
+            component={RouterLink}
+            to="/recuperar-senha"
+            variant="body2"
+            color="primary"
           >
             Esqueceu sua senha?
           </Link>
         </Box>
-
-        <CustomButton 
-          type="submit" 
-          fullWidth 
+        <CustomButton
+          type="submit"
+          fullWidth
           variant="contained"
           sx={{ py: 1.5 }}
         >
           Entrar
         </CustomButton>
-        
         <Typography variant="body2" sx={{ mt: 2 }}>
           Ainda não tem conta?{' '}
-          <Link 
-            component={RouterLink} 
-            to="/cadastro" 
-            variant="body2" 
-            color="secondary" 
+          <Link
+            component={RouterLink}
+            to="/cadastro"
+            variant="body2"
+            color="secondary"
           >
             Cadastre-se aqui
           </Link>
@@ -117,3 +109,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

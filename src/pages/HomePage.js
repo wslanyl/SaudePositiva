@@ -209,7 +209,7 @@ const HomePage = () => {
               fullWidth
               sx={{ mt: 3, py: 1.5 }}
             >
-              Começar Agora
+              Agendar consulta
             </Button>
           </Grid>
         </Grid>

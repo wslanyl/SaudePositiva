@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material'; // Reseta o CSS padrão
 import theme from './theme/theme'; 
-import AppRoutes from './navigation/AppRouter'; 
+import AppRouter from './navigation/AppRouter'; 
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <CssBaseline /> 
       {/* 3. Configura o roteamento para todas as páginas */}
       <Router>
-        <AppRoutes /> 
+        <AppRouter /> 
       </Router>
     </ThemeProvider>
   );
