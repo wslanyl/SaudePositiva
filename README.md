@@ -21,8 +21,8 @@ Este projeto é uma aplicação web para agendamento de consultas, desenvolvida 
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/seu-repo.git
-   cd seu-repo
+   git clone https://github.com/wslanyl/SaudePositiva
+   cd SaudePositiva
   Instale as dependências: 
   
 npm install 
