@@ -50,4 +50,3 @@ Projeto desenvolvido para fins de estudo e demonstração.
 
 Dúvidas ou sugestões? Abra uma issue ou entre em contato!
 
-Se quiser adaptar algum detalhe, é só pedir!
