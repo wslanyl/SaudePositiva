@@ -1,11 +1,22 @@
 import React from 'react';
 import { Box, Paper, Typography, TextField, Button } from '@mui/material';
+// IMPORTAÇÕES CORRETAS
+import logo from '../assets/saudepositivalogo.png';
+import bgImage from '../assets/fotomedico.jpg';
 
 export default function Register() {
   return (
-    <Box sx={{ minHeight: '100vh', background: 'linear-gradient(rgba(0,150,136,0.7),rgba(0,150,136,0.7)), url("/login-bg.jpg") center/cover', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <Box sx={{ 
+      minHeight: '100vh', 
+      background: `linear-gradient(rgba(0,150,136,0.7),rgba(0,150,136,0.7)), url(${bgImage}) center/cover`, 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center' 
+    }}>
       <Paper elevation={3} sx={{ p: 4, width: 350, textAlign: 'center' }}>
-        <img src="/saudepositivalogo.png" alt="Saúde Positiva" style={{ height: 48, marginBottom: 8 }} />
+        {/* Logo corrigido */}
+        <img src={logo} alt="Saúde Positiva" style={{ height: 48, marginBottom: 8 }} />
+        
         <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>Cadastro</Typography>
         <Typography sx={{ mb: 2, fontSize: 14 }}>Digite suas informações para continuar</Typography>
         <TextField label="Email" fullWidth sx={{ mb: 2 }} />
@@ -19,4 +30,3 @@ export default function Register() {
     </Box>
   );
 }
-

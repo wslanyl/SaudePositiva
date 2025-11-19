@@ -4,6 +4,8 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import { useNavigate } from 'react-router-dom';
+import bannerImg from '../assets/fotomedico.jpg';
 
 const features = [
   { icon: <AccessTimeIcon color="primary" />, title: 'Aumenta sua Produtividade', desc: 'Reduza trabalho manual com automações inteligentes e processos digitais' },
@@ -26,16 +28,30 @@ const cards = [
 ];
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <Box>
-      {/* Banner */}
-      <Box sx={{ width: '100%', height: 260, background: 'linear-gradient(rgba(0,150,136,0.7),rgba(0,150,136,0.7)), url("/banner.jpg") center/cover', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Typography variant="h5" sx={{ color: '#fff', fontWeight: 700, textAlign: 'center', maxWidth: 600 }}>
+      {/* AJUSTE FEITO AQUI:
+         1. height: { xs: 260, md: 450 } -> Aumenta a altura em telas grandes (md)
+         2. backgroundPosition: 'center top' -> Foca no topo da imagem (rosto) e não no meio (dentes)
+      */}
+      <Box sx={{ 
+        width: '100%', 
+        height: { xs: 260, md: 450 }, 
+        background: `linear-gradient(rgba(0,150,136,0.6),rgba(0,150,136,0.6)), url(${bannerImg})`,
+        backgroundPosition: 'center 20%', // Ajuste fino para pegar bem o rosto
+        backgroundSize: 'cover',
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center' 
+      }}>
+        <Typography variant="h5" sx={{ color: '#fff', fontWeight: 700, textAlign: 'center', maxWidth: 600, px: 2 }}>
           CONECTAMOS VOCÊ AO CUIDADO QUE MERECE, COM CONFORTO E CONFIANÇA.
         </Typography>
       </Box>
-      {/* Motivos e Grátis */}
-      <Grid container spacing={2} sx={{ mt: 4, mb: 2, justifyContent: 'center' }}>
+      
+      <Grid container spacing={2} sx={{ mt: 4, mb: 2, justifyContent: 'center', px: 2 }}>
         <Grid item xs={12} md={4}>
           <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1 }}>Por que escolher Saúde Positiva?</Typography>
           <List>
@@ -57,16 +73,23 @@ export default function Home() {
               </ListItem>
             ))}
           </List>
-          <Button variant="contained" sx={{ mt: 2, background: '#008080' }}>Agendar consulta</Button>
+          
+          <Button 
+            variant="contained" 
+            sx={{ mt: 2, background: '#008080' }}
+            onClick={() => navigate('/specialists')}
+          >
+            Agendar consulta
+          </Button>
         </Grid>
       </Grid>
-      {/* Funcionalidades */}
+      
       <Box sx={{ textAlign: 'center', mt: 6, mb: 2 }}>
         <Typography variant="h6" sx={{ fontWeight: 700 }}>
           Funcionalidades que <span style={{ color: '#8BC34A' }}>Transformam</span>
         </Typography>
       </Box>
-      <Grid container spacing={2} sx={{ justifyContent: 'center', mb: 6 }}>
+      <Grid container spacing={2} sx={{ justifyContent: 'center', mb: 6, px: 2 }}>
         {cards.map((card, i) => (
           <Grid item xs={12} sm={6} md={4} key={i}>
             <Paper elevation={2} sx={{ p: 2, minHeight: 120 }}>
@@ -80,4 +103,3 @@ export default function Home() {
     </Box>
   );
 }
-
