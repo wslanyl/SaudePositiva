@@ -91,4 +91,4 @@ Contribuições são bem-vindas! Se você tiver sugestões ou quiser reportar um
 ### 📧 Contato
 
 * **Desenvolvedores:** Wslanyl, Agnes e Wedja
-* **GitHub:** https://github.com/wslanyl , 
+* **GitHub:** https://github.com/wslanyl , https://github.com/AgnesRibeiro e https://github.com/WedjaSousa
