@@ -30,27 +30,29 @@ const cards = [
 export default function Home() {
   const navigate = useNavigate();
 
-  return (
+   return (
     <Box>
-      {/* AJUSTE FEITO AQUI:
-         1. height: { xs: 260, md: 450 } -> Aumenta a altura em telas grandes (md)
-         2. backgroundPosition: 'center top' -> Foca no topo da imagem (rosto) e não no meio (dentes)
-      */}
       <Box sx={{ 
         width: '100%', 
-        height: { xs: 260, md: 450 }, 
+        height: { xs: 250, md: 450 }, 
         background: `linear-gradient(rgba(0,150,136,0.6),rgba(0,150,136,0.6)), url(${bannerImg})`,
-        backgroundPosition: 'center 20%', // Ajuste fino para pegar bem o rosto
+        backgroundPosition: 'center 25%',
         backgroundSize: 'cover',
         display: 'flex', 
         alignItems: 'center', 
-        justifyContent: 'center' 
+        justifyContent: 'flex-start', 
+        px: { xs: 4, md: 10 } 
       }}>
-        <Typography variant="h5" sx={{ color: '#fff', fontWeight: 700, textAlign: 'center', maxWidth: 600, px: 2 }}>
+        <Typography variant="h3" sx={{ 
+          color: '#fff', 
+          fontWeight: 600, 
+          textAlign: 'left', 
+          maxWidth: 450 
+        }}>
           CONECTAMOS VOCÊ AO CUIDADO QUE MERECE, COM CONFORTO E CONFIANÇA.
         </Typography>
       </Box>
-      
+     
       <Grid container spacing={2} sx={{ mt: 4, mb: 2, justifyContent: 'center', px: 2 }}>
         <Grid item xs={12} md={4}>
           <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1 }}>Por que escolher Saúde Positiva?</Typography>

@@ -15,7 +15,7 @@ export default function Navbar({ isAuthenticated, onLogout }) {
           to="/" 
           sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', textDecoration: 'none', cursor: 'pointer' }}
         >
-          <img src={logo} alt="Saúde Positiva" style={{ height: 32, marginRight: 8 }} />
+          <img src={logo} alt="Saúde Positiva" style={{ height: 80, marginRight: 8 }} />
           <Typography variant="h6" sx={{ color: '#009688', fontWeight: 700 }}>
             SAÚDE <span style={{ color: '#FBC02D' }}>POSITIVA</span>
           </Typography>

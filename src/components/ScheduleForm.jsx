@@ -15,7 +15,6 @@ export default function ScheduleForm({ onConfirm }) {
               <TextField label="Email" fullWidth sx={{ mb: 2 }} />
               <TextField label="Telefone" fullWidth sx={{ mb: 2 }} />
               <TextField label="Data de Nascimento" fullWidth sx={{ mb: 2 }} />
-              <TextField label="Adicione uma mensagem" fullWidth sx={{ mb: 2 }} />
               <Typography sx={{ fontWeight: 600, mb: 1 }}>Forma de pagamento</Typography>
               <TextField label="Número do cartão" fullWidth sx={{ mb: 2 }} />
               <TextField label="Validade" fullWidth sx={{ mb: 2 }} />
