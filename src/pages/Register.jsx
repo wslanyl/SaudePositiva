@@ -15,7 +15,7 @@ export default function Register() {
     }}>
       <Paper elevation={3} sx={{ p: 4, width: 350, textAlign: 'center' }}>
         {/* Logo corrigido */}
-        <img src={logo} alt="Saúde Positiva" style={{ height: 48, marginBottom: 8 }} />
+        <img src={logo} alt="Saúde Positiva" style={{ height: 90, marginBottom: 8 }} />
         
         <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>Cadastro</Typography>
         <Typography sx={{ mb: 2, fontSize: 14 }}>Digite suas informações para continuar</Typography>

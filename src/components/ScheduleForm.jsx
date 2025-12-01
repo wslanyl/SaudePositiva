@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box, Typography, TextField, Button, Paper, Grid, Checkbox, FormControlLabel } from '@mui/material';
 
-export default function ScheduleForm({ onConfirm }) {
+export default function ScheduleForm({ onConfirm, onBack }) { // Certifique-se de receber onBack aqui
   return (
     <Box sx={{ minHeight: '100vh', background: '#f9f9f9' }}>
       <Box sx={{ maxWidth: 900, mx: 'auto', py: 4 }}>
-        <Button variant="text" sx={{ mb: 2 }}>&lt; Voltar</Button>
+        {/* ADICIONADO onClick={onBack} */}
+        <Button variant="text" sx={{ mb: 2 }} onClick={onBack}>&lt; Voltar</Button>
         <Typography variant="h5" sx={{ fontWeight: 700, mb: 3 }}>Formulário de agendamento</Typography>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>

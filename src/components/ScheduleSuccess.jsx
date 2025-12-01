@@ -1,12 +1,15 @@
 import React from 'react';
 import { Box, Typography, Paper, Button } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Link } from 'react-router-dom'; // IMPORTAÇÃO ADICIONADA
 
 export default function ScheduleSuccess() {
   return (
     <Box sx={{ minHeight: '100vh', background: '#f9f9f9' }}>
       <Box sx={{ maxWidth: 900, mx: 'auto', py: 4 }}>
-        <Button variant="text" sx={{ mb: 2 }}>&lt; Voltar</Button>
+        {/* BOTÃO CORRIGIDO PARA NAVEGAR DE VOLTA */}
+        <Button component={Link} to="/specialists" variant="text" sx={{ mb: 2 }}>&lt; Voltar</Button>
+        
         <Paper sx={{ p: 4, textAlign: 'center' }}>
           <CheckCircleIcon sx={{ color: '#4caf50', fontSize: 80, mb: 2 }} />
           <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>AGENDAMENTO CONFIRMADO</Typography>
@@ -26,4 +29,3 @@ export default function ScheduleSuccess() {
     </Box>
   );
 }
-
